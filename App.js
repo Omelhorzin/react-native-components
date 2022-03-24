@@ -1,15 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, SafeAreaView, Image } from 'react-native';
-import { View } from 'react-native-web';
+import { Dimensions, View } from 'react-native';
 
 import header from './assets/header.png';
+
+const width = Dimensions.get('window').width;
+const height = Dimensions.get('window').height;
 
 export default function App() {
   return (
     <SafeAreaView>
-      <View>
-        <Text>Estácio</Text>
+      <View style={styles.headerView}>
         <Image source={header} style={styles.header} ></Image>
+        <Text style={styles.title}>Estácio</Text>
       </View>
       <View style={styles.detailsView}>
         <Text>Xbox Series X</Text>
@@ -27,6 +30,9 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     paddingHorizontal: 10,
   },
+  headerView: {
+    flex: 1,
+  },
   container: {
     flex: 1,
     backgroundColor: '#fff',
@@ -34,7 +40,16 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   header: {
-    width: 390,
-    height: 300,
+    width: '100%',
+    height: 350,
+  }, 
+  title: {
+    fontSize: 30,
+    fontWeight: 'bold',
+    color: '#6b5b95',
+    paddingTop: 30,
+    position: 'absolute',
+    textAlign: 'center',
+    width: '100%',
   }
 });
