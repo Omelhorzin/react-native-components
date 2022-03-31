@@ -1,9 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
-import { 
+import {
   StyleSheet, Text, SafeAreaView, Image, Button, Dimensions, View
 } from 'react-native';
 
 import header from './assets/header.png';
+import MainView from './src/views/MainView';
+import EstacioView from './src/views/EstacioView';
 
 export default function App() {
   return (
@@ -31,6 +33,8 @@ export default function App() {
           color="#007AFF"
           accessibilityLabel="Adicionar ao carrinho"
         />
+        <MainView />
+        <EstacioView />
       </View>
     </SafeAreaView>
   );
@@ -103,7 +107,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
     color: '#106510',
     fontWeight: 'bold',
-  }, 
+  },
   cartArea: {
     padding: 20
   }
