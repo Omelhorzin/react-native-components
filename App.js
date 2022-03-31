@@ -6,7 +6,8 @@ import {
 import header from './assets/header.png';
 import MainView from './src/views/MainView';
 import EstacioView from './src/views/EstacioView';
-
+import Preco from './src/components/Preco';
+import Descricao from './src/components/Descricao';
 export default function App() {
   return (
     <SafeAreaView>
@@ -21,12 +22,9 @@ export default function App() {
         <Image style={styles.icon} source={{ uri: 'https://arquivosbordados.com/wp-content/uploads/2021/10/embroidery-design-logo_753eeb22-e242-4204-bf27-f3012cc27322-1.jpg' }}></Image>
         <Text style={styles.sonyName}>Sony</Text>
       </View>
-      <View>
-        <Text style={styles.productDescription}>Lorem ipsum dolor sit amet conseqt adiscipli elit. Lorem ipsum dolor sit amet conseqt adiscipli elit.Lorem ipsum dolor sit amet conseqt adiscipli elit.Lorem ipsum dolor sit amet conseqt adiscipli elit.Lorem ipsum dolor sit amet conseqt adiscipli elit.</Text>
-      </View>
-      <View>
-        <Text style={styles.productPrice}>R$ 4.0000,00</Text>
-      </View>
+      <Descricao />
+      <Preco />
+      <Preco />
       <View style={styles.cartArea}>
         <Button
           title="Adicionar ao carrinho"
@@ -93,21 +91,8 @@ const styles = StyleSheet.create({
     padding: 20,
     flexDirection: 'row'
   },
-  productDescription: {
-    paddingLeft: 20,
-    paddingRight: 20,
-    fontSize: 15,
-    color: '#6b5b95',
-    textAlign: 'justify',
-  },
-  productPrice: {
-    paddingLeft: 20,
-    paddingRight: 20,
-    paddingTop: 10,
-    fontSize: 30,
-    color: '#106510',
-    fontWeight: 'bold',
-  },
+  
+  
   cartArea: {
     padding: 20
   }
